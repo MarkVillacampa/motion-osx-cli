@@ -47,15 +47,17 @@ end
 
 ```
 $ /Users/me/Desktop/my-app hello world
-Number of arguments: 3
-Arguments: ["/Users/me/Desktop/my-app", "hello", "world"]
+Number of arguments:
+3
+Arguments:
+["/Users/me/Desktop/my-app", "hello", "world"]
 ```
 
-As you can see, even if we don't pass any arguments, the first argument will always be the full path of file we're executing. This is a standard behaviour for any command line application.
+As you can see, even if we don't pass any arguments, the first argument will always be the full path of the file we're executing. This is a standard behaviour for any command line application.
 
 ## Frameworks
 
-By default, your app will only require the 'Foundation' framework, which is required by the Rubymotion runtime. If you want to include other frameworks you can do so in your Rakefile:
+By default, your app will only require the `Foundation` framework, which is required by the Rubymotion runtime. If you want to include other frameworks you can do so in your Rakefile:
 
 ```Ruby
 Motion::Project::App.setup do |app|
@@ -81,7 +83,7 @@ end
 
 ## Distribution
 
-When the Rubymotion toolchain builds your application, it will generate a .app file. How ever in the case of a command line application we are only interested in the executable. To retrieve it, right click in the .app file and click `Show Package Contents`. The executable will be located in a path similar to his, inside your `build` directory:
+When the Rubymotion toolchain builds your application, it will generate a .app file. However in the case of a command line application we are only interested in the executable. To retrieve it, right click in the .app file and click `Show Package Contents`. The executable will be located in a path similar to this, inside your `build` directory:
 
     build/MacOSX-10.9-Release/my-app.app/Contents/MacOS/my-app
 
@@ -89,7 +91,7 @@ You can now copy it somewhere else and execute it on your terminal.
 
 ## Testing
 
-If your app does does not require require the AppKit framework and doesn't call `NSApp.run` at any point, `rake spec` will fail. Currently, Rubymotion's test framework expects a run loop created by a NSApplication to be present.
+If your app does does not require require the AppKit framework and doesn't call `NSApp.run` at any point, `rake spec` will fail. Currently, Rubymotion's test framework expects a run loop to be created by a NSApplication.
 
 ## TODO
 
