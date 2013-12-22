@@ -32,7 +32,7 @@ class AppDelegate
 end
 ```
 
-You can pass arguments to your app when executing it on the command line. `argc` is an integer repesenting the number of arguments passed to your application, and `argv` is an array containing each of these arguments. Let's see an example:
+You can pass arguments to your app when executing it on the command line. `argc` is an integer representing the number of arguments passed to your application, and `argv` is an array containing each of these arguments. Let's see an example:
 
 ```Ruby
 class AppDelegate
@@ -89,17 +89,17 @@ When the Rubymotion toolchain builds your application, it will generate a .app f
 
 You can now copy it somewhere else and execute it on your terminal.
 
-If you don't have an OSX Developer Cetificate, or you simply don't want to codesign your command line app, you can do so in your Rakefile:
+If you don't have an OSX Developer Cetificate, or you simply don't want to codesign your command line app, you can do so in your Rakefile
 
 ```Ruby
 Motion::Project::App.setup do |app|
-  app.codesign_for_release
+  app.codesign_for_release = false
 end
 ```
 
 ## Testing
 
-If your app does does not require require the AppKit framework and doesn't call `NSApp.run` at any point, `rake spec` will fail. Currently, Rubymotion's test framework expects a run loop to be created by a NSApplication.
+If your app does does not require the AppKit framework and doesn't call `NSApp.run` at any point, `rake spec` will fail. Currently, Rubymotion's test framework expects a run loop to be created by a NSApplication.
 
 ## TODO
 
