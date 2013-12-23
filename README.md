@@ -55,6 +55,12 @@ Arguments:
 
 As you can see, even if we don't pass any arguments, the first argument will always be the full path of the file we're executing. This is a standard behaviour for any command line application.
 
+During development, you can pass arguments to your application direcly from the `rake` command that compiles and runs the app:
+
+    $ rake args="Hello world"
+
+(From the [RubyMotion Project Management Guide](http://www.rubymotion.com/developer-center/guides/project-management/#_passing_arguments))
+
 ## Frameworks
 
 By default, your app will only require the `Foundation` framework, which is required by the Rubymotion runtime. If you want to include other frameworks you can do so in your Rakefile:
